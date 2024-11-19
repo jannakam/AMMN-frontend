@@ -2,6 +2,7 @@ import React from 'react';
 import { Menubar } from 'primereact/menubar';
 import { InputText } from 'primereact/inputtext';
 import { Avatar } from 'primereact/avatar';
+import ThemeSwitcher from './ThemeSwitcher';
 
 
 export default function Navbar() {
@@ -29,6 +30,7 @@ export default function Navbar() {
                 shape="circle"
                 className="p-overlay-badge"
             />
+            <ThemeSwitcher />
         </div>
     );
 
