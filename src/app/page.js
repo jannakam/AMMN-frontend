@@ -7,12 +7,15 @@ import 'primeflex/primeflex.css';
 import { Button } from 'primereact/button';
 import Navbar from '@/components/Navbar';
 import CTA from '@/components/CTA';
+import Login from '@/components/Login';
+import MainContent from '@/components/MainContent';
 
 export default function Home() {
     return (
       <PrimeReactProvider>
-        <Navbar />
-        <CTA />
+        <div className="flex">
+            <MainContent />
+        </div>
       </PrimeReactProvider>
     );
 }

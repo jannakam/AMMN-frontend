@@ -1,3 +1,5 @@
+// allows us to switch between light and dark mode
+
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -37,7 +39,7 @@ export default function ThemeSwitcher() {
     };
 
     return (
-        <div className="flex align-items-center gap-3">
+        <div className="fixed top-5 left-5 flex align-items-center gap-3">
             <ToggleButton
                 onLabel="Light"
                 offLabel="Dark"

@@ -1,3 +1,5 @@
+// this page will contain all the "Call to Action" headers in a vertical carousel
+
 import { Button } from "primereact/button"
 
 export default function CTA() {

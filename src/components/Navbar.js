@@ -1,3 +1,5 @@
+// will remove later
+
 import React from 'react';
 import { Menubar } from 'primereact/menubar';
 import { InputText } from 'primereact/inputtext';
@@ -30,7 +32,6 @@ export default function Navbar() {
                 shape="circle"
                 className="p-overlay-badge"
             />
-            <ThemeSwitcher />
         </div>
     );
 
