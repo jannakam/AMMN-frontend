@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -25,4 +26,14 @@ body.dark-mode {
   color: #ffffff;
   transition: background-color 0.3s, color 0.3s;
 }
+
+
+
+.noto-kufi-arabic {
+  font-family: "Noto Kufi Arabic", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
 

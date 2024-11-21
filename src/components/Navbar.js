@@ -4,7 +4,7 @@ import React from 'react';
 import { Menubar } from 'primereact/menubar';
 import { InputText } from 'primereact/inputtext';
 import { Avatar } from 'primereact/avatar';
-import ThemeSwitcher from './ThemeSwitcher';
+import ThemeSwitcher from './ThemeContext.js';
 
 
 export default function Navbar() {

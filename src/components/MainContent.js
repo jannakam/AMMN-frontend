@@ -7,8 +7,11 @@
 
 import { useState, React } from "react";
 import Navbar from "./Navbar";
-import CTA from "./CTA";
+import CTA from "./Carousel";
 import Login from "./Login";
+import Footer from "./Footer";
+import Carousel from "./Carousel";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 export default function MainContent() {
     const [marginRight, setMarginRight] = useState("mr-[40px]");
@@ -19,9 +22,10 @@ export default function MainContent() {
 
     return (
         <div className={`transition-all duration-300 w-full ${marginRight}`}>
+            <ThemeSwitcher />
             <Login onVisibilityChange={handleVisibilityChange} />
-            {/* <Navbar /> */}
-            <CTA />
+            <Carousel />
+            <Footer/>
         </div>
     );
 }
