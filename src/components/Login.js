@@ -98,7 +98,7 @@ export default function Login({ onVisibilityChange }) {
   };
 
   return (
-    <div onMouseEnter={handleMouseEnter} className={`fixed top-0 right-0 transition-all duration-300 h-full bg-current ${
+    <div onMouseEnter={handleMouseEnter} className={`fixed top-0 right-0 transition-all duration-300 h-full ${
       visibleRight ? "w-[350px]" : "w-[40px]"
     } shadow-md`}>
       <div className="absolute top-1/2 transform -translate-y-1/2 left-1">
@@ -119,12 +119,13 @@ export default function Login({ onVisibilityChange }) {
             </p>
           </div>
         </Dialog>
-        <div className="flex justify-content-center w-full h-full items-center bg-current">
-          <div className="card p-6 bg-current">
+        <div className="flex justify-content-center w-full h-full items-center">
+          <div className="card p-6">
           <TabView 
             activeIndex={activeIndex} 
-            onTabChange={(e) => setActiveIndex(e.index)}>
-            <TabPanel header="Login" className="w-full text-center">
+            onTabChange={(e) => setActiveIndex(e.index)}
+            className="custom-tabview">
+            <TabPanel header="Login" className="w-full text-center custom-tabpanel">
                 <Form
                   onSubmit={onSubmit}
                   initialValues={{ username: "", password: "" }}
@@ -158,7 +159,7 @@ export default function Login({ onVisibilityChange }) {
                   )}
                 />
               </TabPanel>
-              <TabPanel header="Register" className="w-full text-center">
+              <TabPanel header="Register" className="w-full text-center custom-tabpanel">
             <Form
                 onSubmit={onSubmit}
                 initialValues={{

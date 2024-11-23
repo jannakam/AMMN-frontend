@@ -8,7 +8,7 @@ export default function ThemeSwitcher() {
     const { isDarkMode, toggleTheme } = useTheme();
 
     return (
-        <div className="fixed top-10 left-10 flex align-items-center gap-3 z-20">
+        <div className="fixed top-10 left-[110px] flex align-items-center gap-3 z-20">
             <ToggleButton
                 onLabel="Light"
                 offLabel="Dark"

@@ -63,6 +63,138 @@ body.dark-mode {
   margin: 0;
 }
 
+/* Style for TabView container */
+.custom-tabview {
+  overflow: hidden; /* Prevent content overflow */
+}
+
+/* Style for individual tabs (buttons) */
+.p-tabview-nav {
+  overflow: hidden; /* Prevent text overflow */
+
+}
+
+.p-tabview-nav li .p-tabview-nav-link {
+  padding: 0.5rem 1rem; 
+  transition: all 0.3s ease;
+  background-color: var(--current);
+  color: var(--current);
+}
+
+/* Style for active tabs */
+p-tabview-nav li.p-highlight .p-tabview-nav-link {
+  color: var(--primary-color);
+  font-weight: bold; 
+}
+
+/* Hover effect for tabs */
+.p-tabview-nav li .p-tabview-nav-link:hover {
+  color: var(--primary-color);
+}
+
+/* Style for TabPanel content */
+.custom-tabpanel {
+  display:flex;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 16px; /* Fully rounded borders for panels */
+  background-color: var(--current);
+  margin-inline: 0.5rem;
+}
+
+.p-tabview-panels {
+  padding: 0.5rem; 
+  background-color: var(--current);
+}
+
+.p-tabview-panel {
+  padding: 2.5rem 1rem 2.5rem 1rem;
+  border: solid 2px var(--primary-color);
+}
+
+/* Dock container customization */
+.p-dock {
+  background-color: var(--foreground); /* Dock container background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute; /* Allow positioning relative to the viewport */
+  top: 50%; /* Center vertically */
+  left: 10px;
+  transform: translateY(-50%); /* Offset to perfectly center vertically */
+  height: 50%; /* Make the dock shorter (adjust percentage or use px) */
+  width: 60px; /* Narrow the dock width (adjust as needed) */
+}
+
+/* Add spacing between Dock items */
+.p-dock ul {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center items within the available space */
+  align-items: center; /* Align items horizontally */
+  gap: 0.5rem; /* Add space between items (adjust the value as needed) */
+  height: 100%; /* Take full height of the container */
+}
+
+
+.p-dock ul li {
+  position: relative;
+  border-radius: 50%; /* Ensure circular icon background */
+  width: 3rem; /* Adjust width of the circle */
+  height: 3rem; /* Adjust height of the circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent; /* Remove background for items */
+}
+
+/* Circle around the icon */
+.p-dock ul li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--surface-0); /* Circle background color */
+  border-radius: 50%; /* Fully circular */
+  z-index: -1; /* Position behind the icon */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Icon customization */
+.p-dock ul li i {
+  font-size: 2rem; /* Adjust icon size */
+  color: var(--foreground); /* Icon color */
+  z-index: 1; /* Ensure it stays above the background circle */
+}
+
+/* Hover effect for Dock items */
+.p-dock ul li:hover {
+  transform: scale(1.2); /* Make the whole item larger on hover */
+}
+
+.p-dock ul li:hover::before {
+  background-color: var(--primary-color); /* Change circle background on hover */
+  transform: scale(1.3); /* Slightly enlarge the circle background */
+}
+
+/* Active/selected Dock item */
+.p-dock ul li.p-highlight::before {
+  background-color: var(--highlight-bg); /* Highlighted circle background */
+}
+
+/* Dock item labels (if applicable) */
+.p-dock ul li span {
+  font-size: 0.875rem; /* Adjust label size */
+  color: var(--text-color-secondary); /* Secondary text color */
+  margin-top: 0.5rem;
+}
+
+
+
+
+
 
 
 
