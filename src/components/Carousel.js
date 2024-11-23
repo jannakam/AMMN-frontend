@@ -56,7 +56,7 @@ const Carousel = () => {
     const indicatorTemplate = (index) => (
         <button
             onClick={() => setActiveIndex(index)}
-            className={`p-2 m-1 rounded-full transition-all duration-300 ${
+            className={`p-1.5 m-1 rounded-full transition-all duration-300 ${
                 activeIndex === index ? "bg-primary text-white scale-110" : "bg-gray-300"
             }`}
         />
@@ -84,7 +84,7 @@ const Carousel = () => {
             </div>
 
             {/* Custom Indicators */}
-            <div className="absolute left-5 top-1/2 -translate-y-1/2 flex flex-col items-center">
+            <div className="absolute left-6 top-1/2 -translate-y-1/2 flex flex-col items-center">
                 {items.map((_, index) => (
                     <div key={index}>{indicatorTemplate(index)}</div>
                 ))}

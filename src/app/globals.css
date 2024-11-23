@@ -17,17 +17,21 @@
 
 body.light-mode {
   background-color: #ffffff;
+  /* background-image: url("/assets/dddepth-067.jpg"); */
   color: #000000;
   transition: background-color 0.3s, color 0.3s;
 }
 
 body.dark-mode {
   background-color: #121212;
+  /* background-image: url("/assets/dark-bg.svg"); */
   color: #ffffff;
   transition: background-color 0.3s, color 0.3s;
 }
 
-
+::-webkit-scrollbar {
+  display: none;
+}
 
 .noto-kufi-arabic {
   font-family: "Noto Kufi Arabic", sans-serif;
@@ -35,5 +39,38 @@ body.dark-mode {
   font-weight: 200;
   font-style: normal;
 }
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.search-avatar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Ensure the Dock is visible */
+:global(.p-dock) {
+  z-index: 1000;
+}
+
+/* Adjust the vertical divider */
+:global(.p-divider.p-divider-vertical) {
+  height: auto;
+  margin: 0;
+}
+
+
+
+
 
 
