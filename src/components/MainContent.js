@@ -17,7 +17,7 @@ export default function MainContent() {
     const [marginRight, setMarginRight] = useState("mr-[40px]");
 
     const handleVisibilityChange = (isVisible) => {
-        setMarginRight(isVisible ? "mr-[350px]" : "mr-[40px]");
+        setMarginRight(isVisible ? "mr-[450px]" : "mr-[40px]");
     };
 
     return (

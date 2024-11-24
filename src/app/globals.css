@@ -16,8 +16,8 @@
 }
 
 body.light-mode {
-  background-color: #ffffff;
-  /* background-image: url("/assets/dddepth-067.jpg"); */
+  background-color: #FFF7EA;
+  /* background-image: url("/assets/Gradient.svg"); */
   color: #000000;
   transition: background-color 0.3s, color 0.3s;
 }
@@ -71,11 +71,10 @@ body.dark-mode {
 /* Style for individual tabs (buttons) */
 .p-tabview-nav {
   overflow: hidden; /* Prevent text overflow */
-
 }
 
 .p-tabview-nav li .p-tabview-nav-link {
-  padding: 0.5rem 1rem; 
+  padding:1rem 1rem; 
   transition: all 0.3s ease;
   background-color: var(--current);
   color: var(--current);
@@ -99,7 +98,6 @@ p-tabview-nav li.p-highlight .p-tabview-nav-link {
   padding: 0.5rem;
   border-radius: 16px; /* Fully rounded borders for panels */
   background-color: var(--current);
-  margin-inline: 0.5rem;
 }
 
 .p-tabview-panels {
@@ -108,7 +106,7 @@ p-tabview-nav li.p-highlight .p-tabview-nav-link {
 }
 
 .p-tabview-panel {
-  padding: 2.5rem 1rem 2.5rem 1rem;
+  padding: 2.5rem 2rem 2.5rem 2rem;
   border: solid 2px var(--primary-color);
 }
 
@@ -191,7 +189,12 @@ p-tabview-nav li.p-highlight .p-tabview-nav-link {
   margin-top: 0.5rem;
 }
 
-
+.p-inputtext {
+  padding: 0.5rem;
+  background-color: var(--surface-0);
+  color: var(--text-color-primary);
+  border: 1px solid var(--surface-1);
+}
 
 
 

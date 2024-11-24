@@ -10,6 +10,7 @@ import { Card } from 'primereact/card';
 import { ListBox } from 'primereact/listbox';
 import LogoutButton from '@/components/LogoutButton';
 import AnimatedCard from '@/components/AnimatedCard';
+import { Badge } from 'primereact/badge';
         
 const Dashboard = () => {
 
@@ -40,6 +41,21 @@ const Dashboard = () => {
     }
   ];
 
+  const profileData = [
+    {
+      profilePic: 'https://via.placeholder.com/150',
+      name: 'John Doe',
+      amount: 120.5,
+      date: '2024-11-23T10:30:00',
+    },
+    {
+      profilePic: 'https://via.placeholder.com/150',
+      name: 'Jane Smith',
+      amount: 75.0,
+      date: '2024-11-20T15:00:00',
+    },
+  ];
+
   const bankAccountTemplate = (option) => (
     <div className="flex flex-col">
       <div className="font-bold">{option.bankName}</div>
@@ -66,7 +82,7 @@ const Dashboard = () => {
     <ThemeProvider>
       <ThemeSwitcher />
       <div className="flex flex-col h-full m-10 ml-[110px]">
-        <div className="w-full flex flex-row justify-end mb-10">
+        <div className="w-full flex flex-row justify-end mb-5">
           <div className="search-avatar">
             <span className="p-input-icon-left">
               <InputText
@@ -78,11 +94,11 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="content flex flex-row justify-center items-center h-full gap-2">
-          <div className="left-half w-full h-full">
+        <div className="content flex flex-row justify-center items-center gap-2">
+          <div className="left-half w-full">
             {/* Wallet Card */}
             <Card title="Wallet" subTitle="Manage your personal funds" className="w-full h-full">
-            <div className="flex flex-col items-center justify-center h-full gap-6">
+            <div className="flex flex-col items-center justify-center gap-6">
               {/* Animated Card */}
               <div className="w-72 h-44 flex justify-center items-center">
                 <AnimatedCard />
@@ -106,10 +122,10 @@ const Dashboard = () => {
           </Card>
           </div>
 
-          <div className="right-half w-full h-full gap-2">
+          <div className="right-half w-full gap-2">
             {/* Right Side Widgets */}
-            <div className="flex flex-col justify-center items-center h-full w-full gap-2">
-              <Card title="Gatiya" subTitle="Card Subtitle" className="w-full h-full">
+            <div className="flex flex-col justify-center items-center w-full gap-2">
+              <Card title="Gatiya" subTitle="Card Subtitle" className="w-full">
                 <div className='flex flex-wrap gap-4 justify-center'>
                 <Card title="Gatiya 1" subTitle="Amount" className='w-1/4'/>
                 <Card title="Gatiya 2" subTitle="Amount" className='w-1/4'/>
@@ -117,22 +133,57 @@ const Dashboard = () => {
                 <Card title="Gatiya 4" subTitle="Amount" className='w-1/4'/>
                 <Card title="Gatiya 5" subTitle="Amount" className='w-1/4'/>
                 <Card title="Gatiya 6" subTitle="Amount" className='w-1/4'/>
-
-
-                </div>
+              </div>
               </Card>
-              <div className="flex flex-row w-full gap-2 h-full">
-    
+
+              <div className="flex flex-row w-full gap-2">
                 <ListBox
+                  filter
                   value={selectedFriend}
                   onChange={(e) => setSelectedFriend(e.value)}
                   options={friends}
                   itemTemplate={friendTemplate}
                   optionLabel="name"
-                  className="w-full md:w-14rem"
+                  className="w-full md:w-14rem .p-listbox .p-inputtext"
                 />
-                <Card title="Salifny" subTitle="Card Subtitle" className="w-full h-full">
-                  <ListBox />
+                
+                <Card title="Salifny" subTitle="Card Subtitle" className="w-full">
+                  {profileData.map((item, index) => (
+                    <Card key={index}>
+                      <div className='flex flex-row gap-4 justify-between'>
+                        
+                        <div className='flex flex-row gap-4'>
+                          <Avatar
+                            className='p-overlay-badge'
+                            image={item.profilePic}
+                            alt={`${item.name}'s profile`}
+                            size="medium"
+                            shape="circle">
+                          <Badge
+                            value="2"
+                            severity="danger"/>
+                          </Avatar>
+
+                        <div className='flex flex-col'>
+                          <h3 className="text-lg font-semibold">{item.name}</h3>
+                          <p className="text-sm text-gray-600">
+                            {new Date(item.date).toLocaleDateString()}
+                          </p>
+                
+                        </div>
+
+                        </div>
+
+                        <div className='flex flex-col items-end'>
+                          <h3 className="text-sm font-semibold">Amount Remaining:</h3>
+                          
+                          <p className="text-l font-medium" style={{ color: 'var(--primary-color)' }}>
+                            Amount: ${item.amount}
+                          </p>
+                        </div>
+                      </div>
+                    </Card>
+                  ))}
                 </Card>
               </div>
             </div>
