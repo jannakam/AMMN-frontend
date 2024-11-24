@@ -6,12 +6,11 @@
 "use client";
 
 import { useState, React } from "react";
-import Navbar from "./Navbar";
 import CTA from "./Carousel";
 import Login from "./Login";
 import Footer from "./Footer";
 import Carousel from "./Carousel";
-import ThemeSwitcher from "./ThemeSwitcher";
+import { ModeToggle } from "./ModeToggle";
 
 export default function MainContent() {
     const [marginRight, setMarginRight] = useState("mr-[40px]");
@@ -22,7 +21,7 @@ export default function MainContent() {
 
     return (
         <div className={`transition-all duration-300 w-full ${marginRight}`}>
-            <ThemeSwitcher />
+            <ModeToggle />
             <Login onVisibilityChange={handleVisibilityChange} />
             <Carousel />
             <Footer/>
